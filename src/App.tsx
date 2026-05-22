@@ -15,9 +15,15 @@ const words: GameWord[] = [
 export default function App() {
   const [currentWord, setCurrentWord] = useState(words[0]);
 
+  const [revealedLetters, setRevealedLetters] = useState(
+    Array(currentWord.word.length).fill(false),
+  );
+
   const hiddenWord = currentWord.word
     .split("")
-    .map(() => "_")
+    .map((letter, index) => {
+      return revealedLetters[index] ? letter : "_";
+    })
     .join(" ");
 
   return (
@@ -29,6 +35,16 @@ export default function App() {
       <p>Palabra: {hiddenWord}</p>
 
       <button onClick={() => setCurrentWord(words[1])}>Cambiar palabra</button>
+
+      <button
+        onClick={() => {
+          const copy = [...revealedLetters];
+          copy[0] = true;
+          setRevealedLetters(copy);
+        }}
+      >
+        Revelar primera letra
+      </button>
     </div>
   );
 }
