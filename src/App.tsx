@@ -26,6 +26,13 @@ export default function App() {
     })
     .join(" ");
 
+  function changeWord() {
+    const newWord = words[1];
+
+    setCurrentWord(newWord);
+    setRevealedLetters(Array(newWord.word.length).fill(false));
+  }
+
   return (
     <div>
       <h1>Adivina la Palabra</h1>
@@ -34,7 +41,7 @@ export default function App() {
 
       <p>Palabra: {hiddenWord}</p>
 
-      <button onClick={() => setCurrentWord(words[1])}>Cambiar palabra</button>
+      <button onClick={changeWord}>Cambiar palabra</button>
 
       <button
         onClick={() => {
