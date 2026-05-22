@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type GameWord = {
   category: string;
   word: string;
@@ -11,7 +13,7 @@ const words: GameWord[] = [
 ];
 
 export default function App() {
-  const currentWord = words[0];
+  const [currentWord, setCurrentWord] = useState(words[0]);
 
   return (
     <div>
@@ -20,6 +22,8 @@ export default function App() {
       <h2>Categoría: {currentWord.category}</h2>
 
       <p>Palabra: {currentWord.word}</p>
+
+      <button onClick={() => setCurrentWord(words[1])}>Cambiar palabra</button>
     </div>
   );
 }
