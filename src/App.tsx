@@ -15,13 +15,18 @@ const words: GameWord[] = [
 export default function App() {
   const [currentWord, setCurrentWord] = useState(words[0]);
 
+  const hiddenWord = currentWord.word
+    .split("")
+    .map(() => "_")
+    .join(" ");
+
   return (
     <div>
       <h1>Adivina la Palabra</h1>
 
       <h2>Categoría: {currentWord.category}</h2>
 
-      <p>Palabra: {currentWord.word}</p>
+      <p>Palabra: {hiddenWord}</p>
 
       <button onClick={() => setCurrentWord(words[1])}>Cambiar palabra</button>
     </div>
