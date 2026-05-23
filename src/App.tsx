@@ -1,16 +1,5 @@
 import { useState } from "react";
-
-type GameWord = {
-  category: string;
-  word: string;
-};
-
-const words: GameWord[] = [
-  { category: "Personajes bíblicos", word: "MOISES" },
-  { category: "Personajes bíblicos", word: "DAVID" },
-  { category: "Libros de la Biblia", word: "GENESIS" },
-  { category: "Países", word: "MEXICO" },
-];
+import { words } from "./data/words";
 
 export default function App() {
   const [currentWord, setCurrentWord] = useState(words[0]);
