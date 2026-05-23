@@ -19,6 +19,11 @@ export default function App() {
     })
     .join(" ");
 
+  function resetRound(word: string) {
+    setRevealedLetters(Array(word.length).fill(false));
+    setCurrentLetterIndex(0);
+  }
+
   function changeWord() {
     let availableWords = remainingWords.filter(
       (word) => word.word !== currentWord.word,
@@ -38,14 +43,11 @@ export default function App() {
       availableWords.filter((word) => word.word !== newWord.word),
     );
 
-    setRevealedLetters(Array(newWord.word.length).fill(false));
-
-    setCurrentLetterIndex(0);
+    resetRound(newWord.word);
   }
 
   function restartWord() {
-    setRevealedLetters(Array(currentWord.word.length).fill(false));
-    setCurrentLetterIndex(0);
+    resetRound(currentWord.word);
   }
 
   function handleHit() {
