@@ -25,6 +25,8 @@ export default function App() {
     Array(currentWord.word.length).fill(false),
   );
 
+  const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
+
   const hiddenWord = currentWord.word
     .split("")
     .map((letter, index) => {
@@ -37,6 +39,16 @@ export default function App() {
 
     setCurrentWord(newWord);
     setRevealedLetters(Array(newWord.word.length).fill(false));
+    setCurrentLetterIndex(0);
+  }
+
+  function handleHit() {
+    const copy = [...revealedLetters];
+
+    copy[currentLetterIndex] = true;
+
+    setRevealedLetters(copy);
+    setCurrentLetterIndex(currentLetterIndex + 1);
   }
 
   return (
@@ -49,15 +61,7 @@ export default function App() {
 
       <button onClick={changeWord}>Cambiar palabra</button>
 
-      <button
-        onClick={() => {
-          const copy = [...revealedLetters];
-          copy[0] = true;
-          setRevealedLetters(copy);
-        }}
-      >
-        Revelar primera letra
-      </button>
+      <button onClick={handleHit}>Acierto</button>
     </div>
   );
 }
