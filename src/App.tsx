@@ -88,8 +88,8 @@ export default function App() {
   }
 
   return (
-    <main>
-      <section>
+    <main className="app">
+      <section className="game-card">
         <h1>Adivina la Palabra</h1>
 
         <h2>Categoría: {currentWord.category}</h2>
