@@ -90,11 +90,13 @@ export default function App() {
   return (
     <main className="app">
       <section className="game-card">
-        <h1>Adivina la Palabra</h1>
+        <h1 className="title">Adivina la Palabra</h1>
 
-        <h2>Categoría: {currentWord.category}</h2>
+        <p className="category-label">Categoría</p>
 
-        <p>Palabra: {hiddenWord}</p>
+        <h2 className="category">{currentWord.category}</h2>
+
+        <p className="hidden-word">{hiddenWord}</p>
 
         <p>
           Tiro: {currentLetterIndex} / {currentWord.word.length}
