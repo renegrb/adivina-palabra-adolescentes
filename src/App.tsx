@@ -80,6 +80,12 @@ export default function App() {
     setCurrentLetterIndex(currentLetterIndex + 1);
   }
 
+  function showAnswer() {
+    setRevealedLetters(Array(currentWord.word.length).fill(true));
+
+    setCurrentLetterIndex(currentWord.word.length);
+  }
+
   return (
     <div>
       <h1>Adivina la Palabra</h1>
@@ -99,6 +105,8 @@ export default function App() {
       <button onClick={handleMiss}>Fallo</button>
 
       <button onClick={restartWord}>Reiniciar</button>
+
+      <button onClick={showAnswer}>Mostrar respuesta</button>
     </div>
   );
 }
