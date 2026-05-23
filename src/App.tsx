@@ -71,6 +71,10 @@ export default function App() {
 
       <p>Palabra: {hiddenWord}</p>
 
+      <p>
+        Tiro: {currentLetterIndex} / {currentWord.word.length}
+      </p>
+
       <button onClick={changeWord}>Cambiar palabra</button>
 
       <button onClick={handleHit}>Acierto</button>
