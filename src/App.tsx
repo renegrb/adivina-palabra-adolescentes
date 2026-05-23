@@ -14,6 +14,8 @@ export default function App() {
 
   const hiddenWord = getHiddenWord();
 
+  const isRoundFinished = currentLetterIndex >= currentWord.word.length;
+
   function resetRound(word: string) {
     setRevealedLetters(Array(word.length).fill(false));
     setCurrentLetterIndex(0);
@@ -50,7 +52,7 @@ export default function App() {
   }
 
   function handleHit() {
-    if (currentLetterIndex >= currentWord.word.length) {
+    if (isRoundFinished) {
       return;
     }
 
@@ -63,7 +65,7 @@ export default function App() {
   }
 
   function handleMiss() {
-    if (currentLetterIndex >= currentWord.word.length) {
+    if (isRoundFinished) {
       return;
     }
 
