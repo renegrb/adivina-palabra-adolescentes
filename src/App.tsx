@@ -12,12 +12,7 @@ export default function App() {
 
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
 
-  const hiddenWord = currentWord.word
-    .split("")
-    .map((letter, index) => {
-      return revealedLetters[index] ? letter : "_";
-    })
-    .join(" ");
+  const hiddenWord = getHiddenWord();
 
   function resetRound(word: string) {
     setRevealedLetters(Array(word.length).fill(false));
@@ -79,6 +74,15 @@ export default function App() {
     setRevealedLetters(Array(currentWord.word.length).fill(true));
 
     setCurrentLetterIndex(currentWord.word.length);
+  }
+
+  function getHiddenWord() {
+    return currentWord.word
+      .split("")
+      .map((letter, index) => {
+        return revealedLetters[index] ? letter : "_";
+      })
+      .join(" ");
   }
 
   return (
