@@ -102,16 +102,16 @@ export default function App() {
           Tiro: {currentLetterIndex} / {currentWord.word.length}
         </p>
 
-        <div>
-          <button onClick={changeWord}>Cambiar palabra</button>
+        <div className="buttons">
+          <button className="game-button" onClick={changeWord}>Cambiar palabra</button>
 
-          <button onClick={handleHit}>Acierto</button>
+          <button className="game-button" onClick={handleHit}>Acierto</button>
 
-          <button onClick={handleMiss}>Fallo</button>
+          <button className="game-button" onClick={handleMiss}>Fallo</button>
 
-          <button onClick={restartWord}>Reiniciar</button>
+          <button className="game-button" onClick={restartWord}>Reiniciar</button>
 
-          <button onClick={showAnswer}>Mostrar respuesta</button>
+          <button className="game-button" onClick={showAnswer}>Mostrar respuesta</button>
         </div>
       </section>
     </main>

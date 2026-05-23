@@ -51,3 +51,28 @@ body {
   letter-spacing: 12px;
   margin-bottom: 24px;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.game-button {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: white;
+  color: #0f172a;
+  transition: 0.2s ease;
+}
+
+.game-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
