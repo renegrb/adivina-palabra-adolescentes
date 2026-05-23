@@ -24,6 +24,10 @@ export default function App() {
     setCurrentLetterIndex(0);
   }
 
+  function goToNextLetter() {
+    setCurrentLetterIndex((currentIndex) => currentIndex + 1);
+  }
+
   function changeWord() {
     let availableWords = remainingWords.filter(
       (word) => word.word !== currentWord.word,
@@ -60,7 +64,7 @@ export default function App() {
     copy[currentLetterIndex] = true;
 
     setRevealedLetters(copy);
-    setCurrentLetterIndex(currentLetterIndex + 1);
+    goToNextLetter();
   }
 
   function handleMiss() {
@@ -68,7 +72,7 @@ export default function App() {
       return;
     }
 
-    setCurrentLetterIndex(currentLetterIndex + 1);
+    goToNextLetter();
   }
 
   function showAnswer() {
