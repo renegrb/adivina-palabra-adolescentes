@@ -31,12 +31,12 @@ export default function App() {
     .join(" ");
 
   function changeWord() {
-    const availableWords = remainingWords.filter(
+    let availableWords = remainingWords.filter(
       (word) => word.word !== currentWord.word,
     );
 
     if (availableWords.length === 0) {
-      return;
+      availableWords = words.filter((word) => word.word !== currentWord.word);
     }
 
     const randomIndex = Math.floor(Math.random() * availableWords.length);
@@ -45,7 +45,9 @@ export default function App() {
 
     setCurrentWord(newWord);
 
-    setRemainingWords(availableWords);
+    setRemainingWords(
+      availableWords.filter((word) => word.word !== newWord.word),
+    );
 
     setRevealedLetters(Array(newWord.word.length).fill(false));
 
