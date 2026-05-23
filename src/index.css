@@ -46,10 +46,11 @@ body {
 }
 
 .hidden-word {
-  font-size: 64px;
+  font-size: clamp(36px, 7vw, 64px);
   font-weight: bold;
-  letter-spacing: 12px;
+  letter-spacing: clamp(4px, 1vw, 12px);
   margin-bottom: 24px;
+  word-break: break-word;
 }
 
 .buttons {
@@ -81,4 +82,26 @@ body {
   font-size: 18px;
   opacity: 0.85;
   margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
+  }
+
+  .game-card {
+    padding: 28px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .category {
+    font-size: 28px;
+  }
+
+  .game-button {
+    width: 100%;
+  }
 }
