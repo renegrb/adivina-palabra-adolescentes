@@ -12,6 +12,12 @@ const words: GameWord[] = [
   { category: "Países", word: "MEXICO" },
 ];
 
+function getRandomWord() {
+  const randomIndex = Math.floor(Math.random() * words.length);
+
+  return words[randomIndex];
+}
+
 export default function App() {
   const [currentWord, setCurrentWord] = useState(words[0]);
 
@@ -27,7 +33,7 @@ export default function App() {
     .join(" ");
 
   function changeWord() {
-    const newWord = words[1];
+    const newWord = getRandomWord();
 
     setCurrentWord(newWord);
     setRevealedLetters(Array(newWord.word.length).fill(false));
