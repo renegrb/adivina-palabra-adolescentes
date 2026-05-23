@@ -88,26 +88,30 @@ export default function App() {
   }
 
   return (
-    <div>
-      <h1>Adivina la Palabra</h1>
+    <main>
+      <section>
+        <h1>Adivina la Palabra</h1>
 
-      <h2>Categoría: {currentWord.category}</h2>
+        <h2>Categoría: {currentWord.category}</h2>
 
-      <p>Palabra: {hiddenWord}</p>
+        <p>Palabra: {hiddenWord}</p>
 
-      <p>
-        Tiro: {currentLetterIndex} / {currentWord.word.length}
-      </p>
+        <p>
+          Tiro: {currentLetterIndex} / {currentWord.word.length}
+        </p>
 
-      <button onClick={changeWord}>Cambiar palabra</button>
+        <div>
+          <button onClick={changeWord}>Cambiar palabra</button>
 
-      <button onClick={handleHit}>Acierto</button>
+          <button onClick={handleHit}>Acierto</button>
 
-      <button onClick={handleMiss}>Fallo</button>
+          <button onClick={handleMiss}>Fallo</button>
 
-      <button onClick={restartWord}>Reiniciar</button>
+          <button onClick={restartWord}>Reiniciar</button>
 
-      <button onClick={showAnswer}>Mostrar respuesta</button>
-    </div>
+          <button onClick={showAnswer}>Mostrar respuesta</button>
+        </div>
+      </section>
+    </main>
   );
 }
