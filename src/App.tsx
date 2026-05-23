@@ -43,11 +43,23 @@ export default function App() {
   }
 
   function handleHit() {
+    if (currentLetterIndex >= currentWord.word.length) {
+      return;
+    }
+
     const copy = [...revealedLetters];
 
     copy[currentLetterIndex] = true;
 
     setRevealedLetters(copy);
+    setCurrentLetterIndex(currentLetterIndex + 1);
+  }
+
+  function handleMiss() {
+    if (currentLetterIndex >= currentWord.word.length) {
+      return;
+    }
+
     setCurrentLetterIndex(currentLetterIndex + 1);
   }
 
@@ -62,6 +74,8 @@ export default function App() {
       <button onClick={changeWord}>Cambiar palabra</button>
 
       <button onClick={handleHit}>Acierto</button>
+
+      <button onClick={handleMiss}>Fallo</button>
     </div>
   );
 }
