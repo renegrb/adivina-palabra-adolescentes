@@ -42,6 +42,11 @@ export default function App() {
     setCurrentLetterIndex(0);
   }
 
+  function restartWord() {
+    setRevealedLetters(Array(currentWord.word.length).fill(false));
+    setCurrentLetterIndex(0);
+  }
+
   function handleHit() {
     if (currentLetterIndex >= currentWord.word.length) {
       return;
@@ -80,6 +85,8 @@ export default function App() {
       <button onClick={handleHit}>Acierto</button>
 
       <button onClick={handleMiss}>Fallo</button>
+
+      <button onClick={restartWord}>Reiniciar</button>
     </div>
   );
 }
