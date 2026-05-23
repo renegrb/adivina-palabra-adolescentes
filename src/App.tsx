@@ -98,20 +98,30 @@ export default function App() {
 
         <p className="hidden-word">{hiddenWord}</p>
 
-        <p>
-          Tiro: {currentLetterIndex} / {currentWord.word.length}
+        <p className="progress">
+          Progreso: {currentLetterIndex} / {currentWord.word.length}
         </p>
 
         <div className="buttons">
-          <button className="game-button" onClick={changeWord}>Cambiar palabra</button>
+          <button className="game-button" onClick={changeWord}>
+            Cambiar palabra
+          </button>
 
-          <button className="game-button" onClick={handleHit}>Acierto</button>
+          <button className="game-button" onClick={handleHit}>
+            Acierto
+          </button>
 
-          <button className="game-button" onClick={handleMiss}>Fallo</button>
+          <button className="game-button" onClick={handleMiss}>
+            Fallo
+          </button>
 
-          <button className="game-button" onClick={restartWord}>Reiniciar</button>
+          <button className="game-button" onClick={restartWord}>
+            Reiniciar
+          </button>
 
-          <button className="game-button" onClick={showAnswer}>Mostrar respuesta</button>
+          <button className="game-button" onClick={showAnswer}>
+            Mostrar respuesta
+          </button>
         </div>
       </section>
     </main>

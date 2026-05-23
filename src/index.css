@@ -76,3 +76,9 @@ body {
   transform: translateY(-2px);
   opacity: 0.9;
 }
+
+.progress {
+  font-size: 18px;
+  opacity: 0.85;
+  margin-top: 16px;
+}
