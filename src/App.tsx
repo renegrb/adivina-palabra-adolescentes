@@ -90,7 +90,7 @@ export default function App() {
   return (
     <main className="app">
       <section className="game-card">
-        <h1 className="title">Adivina la Palabra</h1>
+        <h1 className="title">🎯 Adivina la Palabra</h1>
 
         <p className="category-label">Categoría</p>
 
@@ -103,24 +103,24 @@ export default function App() {
         </p>
 
         <div className="buttons">
-          <button className="game-button" onClick={changeWord}>
-            Cambiar palabra
-          </button>
-
           <button className="game-button" onClick={handleHit}>
-            Acierto
+            ✅ Acierto
           </button>
 
           <button className="game-button" onClick={handleMiss}>
-            Fallo
-          </button>
-
-          <button className="game-button" onClick={restartWord}>
-            Reiniciar
+            ❌ Fallo
           </button>
 
           <button className="game-button" onClick={showAnswer}>
-            Mostrar respuesta
+            👀 Mostrar respuesta
+          </button>
+
+          <button className="game-button" onClick={restartWord}>
+            🔁 Reiniciar
+          </button>
+
+          <button className="game-button" onClick={changeWord}>
+            ⏭️ Cambiar palabra
           </button>
         </div>
       </section>
